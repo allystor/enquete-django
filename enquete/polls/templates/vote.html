@@ -9,9 +9,8 @@
 </head>
 <body>
     <div class="container">
-        <form action="{% url 'polls:vote' question.id %}" method="POST">
+        <form action="{% url 'vote' question.id %}" method="POST">
             {% csrf_token %}
-            <h1>{{ question.question_text }}</h1>
             <fieldset>
                 <legend><h1>{{question.question_text}}</h1></legend>
                 {% if error_message %} <p><strong>{{error_message}}</strong></p> {% endif %}
